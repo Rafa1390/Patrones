@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/rafab/Documents/Programación de software/010 Programación con patrones/Materia vista en clase/Codigo/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rafab/Documents/Programación de software/010 Programación con patrones/Materia vista en clase/Codigo/junit-4.12.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
