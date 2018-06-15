@@ -47,7 +47,4 @@ public class Carta {
 		Carta carta = new Carta(nombre, palo, valor);
 		return carta;
 	}
-	
-	
-	
 }
