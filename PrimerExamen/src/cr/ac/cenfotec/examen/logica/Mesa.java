@@ -42,7 +42,7 @@ public class Mesa {
 			for(int j = 0; j < mano.size(); j++) {
 				sumManos = sumManos + mano.get(j).getValor();
 			}
-			if(sumManos > manoMayor) {
+			if(sumManos > manoMayor || sumManos == 12) {
 				manoMayor = sumManos;
 				jugGan = jugador;
 			}
@@ -50,5 +50,29 @@ public class Mesa {
 		}
 		
 		return jugGan;
+	}
+	
+	public ArrayList<Carta> verificarCambioDeMano(ArrayList<Carta> pMano)throws Exception{
+		Carta cartaAct = new Carta();
+		Carta nueCart = new Carta();
+		ArrayList<Carta> nueMano = new ArrayList<Carta>();
+		
+		for(int i = 0; i < pMano.size(); i++) {
+			cartaAct = pMano.get(i);
+			switch(cartaAct.getNombre()) {
+			case JOTA:
+			case QUINA:
+			case KA:
+			case TRES:
+				nueCart = repartidor.darCarta();
+				nueMano.add(nueCart);
+				break;
+			default:
+				nueMano.add(cartaAct);
+				break;
+			}
+		}
+		
+		return nueMano;
 	}
 }

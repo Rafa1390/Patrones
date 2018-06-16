@@ -10,6 +10,7 @@ import org.junit.Test;
 import cr.ac.cenfotec.examen.logica.Carta;
 import cr.ac.cenfotec.examen.logica.Jugador;
 import cr.ac.cenfotec.examen.logica.Mesa;
+import cr.ac.cenfotec.examen.logica.TipoNombre;
 
 public class MesaTest {
 
@@ -61,5 +62,19 @@ public class MesaTest {
 		jugadorGanador = mesa.recibirManos(listaJugadores);
 		
 		assertEquals(jugador2.getNombre(),jugadorGanador.getNombre());
+	}
+	
+	@Test
+	public void verificarCambioDeManoTest()throws Exception{
+		Carta carta1 = new Carta(); carta1.setNombre(TipoNombre.QUINA); 
+		Carta carta2 = new Carta(); carta2.setNombre(TipoNombre.AS);
+		ArrayList<Carta> manoAct = new ArrayList<Carta>(); manoAct.addAll(Arrays.asList(carta1,carta2));
+		
+		ArrayList<Carta> nueMano = mesa.verificarCambioDeMano(manoAct);
+		Carta nueCart1 = nueMano.get(0);
+		Carta nueCart2 = nueMano.get(1);
+		
+		assertFalse(carta1.getNombre() == nueCart1.getNombre());
+		assertTrue(carta2.getNombre() == nueCart2.getNombre());
 	}
 }
