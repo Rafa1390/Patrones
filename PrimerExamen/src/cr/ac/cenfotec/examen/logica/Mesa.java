@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Mesa {
 	private Repartidor repartidor = new Repartidor();
-	private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
 	
 	public boolean agregarjugador(int cantJugadores) throws Exception{
 		if(cantJugadores > 4 || cantJugadores <= 0) {
@@ -29,5 +28,27 @@ public class Mesa {
 			jugadoresAct.add(jugador);
 		}
 		return jugadoresAct;
+	}
+	
+	public Jugador recibirManos(ArrayList<Jugador> pJugadores)throws Exception{
+		Jugador jugador = new Jugador();
+		Jugador jugGan = new Jugador();
+		ArrayList<Carta> mano = new ArrayList<Carta>();
+		int sumManos = 0, manoMayor = 0;
+		
+		for(int i = 0; i < pJugadores.size(); i++) {
+			jugador = pJugadores.get(i);
+			mano = jugador.getMano();
+			for(int j = 0; j < mano.size(); j++) {
+				sumManos = sumManos + mano.get(j).getValor();
+			}
+			if(sumManos > manoMayor) {
+				manoMayor = sumManos;
+				jugGan = jugador;
+			}
+			sumManos = 0;
+		}
+		
+		return jugGan;
 	}
 }

@@ -8,30 +8,28 @@ public class UI {
 	public static void main(String[] args) throws Exception {
 		Mesa mesa = new Mesa();
 		ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
-		Jugador jugador = new Jugador();
-		ArrayList<Carta> mano = new ArrayList<Carta>();
+		Jugador jugadorGanador;
 		
-		ArrayList<Jugador> jugadoresTest;
-		Jugador jugador1 = new Jugador();
-		Jugador jugador2 = new Jugador();
-		Jugador jugador3 = new Jugador();
+		Jugador jugador1 = new Jugador(); jugador1.setNombre("Julio");
+		Jugador jugador2 = new Jugador(); jugador2.setNombre("Pedro");
+		Jugador jugador3 = new Jugador(); jugador3.setNombre("Juan");
 		
-		jugador1.setNombre("Julio");
-		jugador2.setNombre("Pedro");
-		jugador3.setNombre("Juan");
+		Carta carta1 = new Carta(); carta1.setValor(10);
+		Carta carta2 = new Carta(); carta2.setValor(10);
+		
+		Carta carta3 = new Carta(); carta3.setValor(4);
+		Carta carta4 = new Carta(); carta4.setValor(5);
+		
+		Carta carta5 = new Carta(); carta5.setValor(1);
+		Carta carta6 = new Carta(); carta6.setValor(2);
+		
+		ArrayList<Carta> mano1 = new ArrayList<Carta>(); mano1.addAll(Arrays.asList(carta1,carta2)); jugador1.setMano(mano1);
+		ArrayList<Carta> mano2 = new ArrayList<Carta>(); mano2.addAll(Arrays.asList(carta3,carta4)); jugador2.setMano(mano2);
+		ArrayList<Carta> mano3 = new ArrayList<Carta>(); mano3.addAll(Arrays.asList(carta5,carta6)); jugador3.setMano(mano3);
+		
 		listaJugadores.addAll(Arrays.asList(jugador1,jugador2,jugador3));
-		jugadoresTest = mesa.empezarAJugar21(listaJugadores);
-		
-		for(int i = 0; i < jugadoresTest.size(); i++) {
-			jugador = jugadoresTest.get(i);
-			mano = jugador.getMano();
-			for(int j = 0; j < mano.size(); j++) {
-				System.out.println(mano.get(j).getNombre() + " " + mano.get(j).getPalo() + " " + mano.get(j).getValor());
-			}
-			
-		}
-		
-		//System.out.println(jugadoresTest.get(2).getMano().size());
+		jugadorGanador = mesa.recibirManos(listaJugadores);
+		System.out.println(jugadorGanador.getNombre());
 	}
 
 }
