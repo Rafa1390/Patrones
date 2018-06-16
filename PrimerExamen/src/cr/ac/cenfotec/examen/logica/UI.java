@@ -1,24 +1,37 @@
 package cr.ac.cenfotec.examen.logica;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class UI {
 
 	public static void main(String[] args) throws Exception {
+		Mesa mesa = new Mesa();
+		ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
+		Jugador jugador = new Jugador();
+		ArrayList<Carta> mano = new ArrayList<Carta>();
 		
-		/*Carta carta = new Carta();
-		Carta carta1;
+		ArrayList<Jugador> jugadoresTest;
+		Jugador jugador1 = new Jugador();
+		Jugador jugador2 = new Jugador();
+		Jugador jugador3 = new Jugador();
 		
-		carta1 = carta.crearCarta(TipoNombre.SIETE, TipoPalo.ESCUDOS);
+		jugador1.setNombre("Julio");
+		jugador2.setNombre("Pedro");
+		jugador3.setNombre("Juan");
+		listaJugadores.addAll(Arrays.asList(jugador1,jugador2,jugador3));
+		jugadoresTest = mesa.empezarAJugar21(listaJugadores);
 		
-		System.out.println(carta1.getValor());*/
+		for(int i = 0; i < jugadoresTest.size(); i++) {
+			jugador = jugadoresTest.get(i);
+			mano = jugador.getMano();
+			for(int j = 0; j < mano.size(); j++) {
+				System.out.println(mano.get(j).getNombre() + " " + mano.get(j).getPalo() + " " + mano.get(j).getValor());
+			}
+			
+		}
 		
-		Naipe naipe = new Naipe();
-		ArrayList<Carta> lista = new ArrayList<Carta>();
-		
-		lista = naipe.obtenerNaipe();
-		
-		System.out.println(lista.get(51).getNombre() + " " + lista.get(51).getPalo());
+		//System.out.println(jugadoresTest.get(2).getMano().size());
 	}
 
 }

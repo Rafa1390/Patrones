@@ -6,7 +6,7 @@ import java.util.Random;
 public class Repartidor {
 	
 	public static ArrayList<Carta> randomNaipe = new ArrayList<Carta>();
-	public static int contaCartas = 52;
+	public static int contaCartas = 51;
 	
 	public ArrayList<Carta> barajarNaipe() throws Exception{
 		Naipe naipeFunc = new Naipe();
@@ -22,7 +22,8 @@ public class Repartidor {
 		return randomNaipe;
 	}
 	
-	public Carta darCarta(ArrayList<Carta> naipe) throws Exception{
+	public Carta darCarta() throws Exception{
+		randomNaipe = barajarNaipe();
 		Carta carta = randomNaipe.get(contaCartas);
 		randomNaipe.remove(contaCartas);
 		contaCartas--;

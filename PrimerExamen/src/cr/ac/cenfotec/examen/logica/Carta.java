@@ -47,4 +47,15 @@ public class Carta {
 		Carta carta = new Carta(nombre, palo, valor);
 		return carta;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(! (obj instanceof Carta)) {
+			return false;
+		}
+			
+		Carta carta = (Carta) obj;
+		return this.valor == carta.valor;
+	}
+	
 }

@@ -14,5 +14,13 @@ public class CartaTest {
 		Carta cartTest = new Carta(TipoNombre.SIETE, TipoPalo.ESCUDOS, 7);
 		assertEquals(cartTest.getValor(), cartTest.crearCarta(TipoNombre.SIETE, TipoPalo.ESCUDOS).getValor());
 	}
+	
+	@Test
+	public void testEqualsCarta() throws Exception{
+		Carta cartTest1 = new Carta(TipoNombre.AS,TipoPalo.ESCUDOS, 7);
+		Carta cartTest2 = new Carta(TipoNombre.AS,TipoPalo.ESTRELLAS, 7);
+		assertEquals(true, cartTest1.equals(cartTest2));
+		
+	}
 
 }
