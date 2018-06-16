@@ -41,8 +41,15 @@ public class Mesa {
 			mano = jugador.getMano();
 			for(int j = 0; j < mano.size(); j++) {
 				sumManos = sumManos + mano.get(j).getValor();
+				if(mano.get(j).getValor() == 1) {
+					sumManos = 21;
+					break;
+				}
 			}
-			if(sumManos > manoMayor || sumManos == 12) {
+			if(sumManos == 21) {
+				sumManos = 21;
+			}
+			if(sumManos > manoMayor) {
 				manoMayor = sumManos;
 				jugGan = jugador;
 			}

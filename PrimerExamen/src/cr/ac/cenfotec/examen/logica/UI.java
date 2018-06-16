@@ -17,10 +17,10 @@ public class UI {
 		Carta carta1 = new Carta(); carta1.setValor(10);
 		Carta carta2 = new Carta(); carta2.setValor(10);
 		
-		Carta carta3 = new Carta(); carta3.setValor(4);
-		Carta carta4 = new Carta(); carta4.setValor(5);
+		Carta carta3 = new Carta(); carta3.setValor(2);
+		Carta carta4 = new Carta(); carta4.setValor(1);
 		
-		Carta carta5 = new Carta(); carta5.setValor(1);
+		Carta carta5 = new Carta(); carta5.setValor(10);
 		Carta carta6 = new Carta(); carta6.setValor(2);
 		
 		ArrayList<Carta> mano1 = new ArrayList<Carta>(); mano1.addAll(Arrays.asList(carta1,carta2)); jugador1.setMano(mano1);
