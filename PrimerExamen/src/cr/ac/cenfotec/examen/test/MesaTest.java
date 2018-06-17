@@ -122,4 +122,23 @@ public class MesaTest {
 		assertFalse(carta1.getNombre() == nueCart1.getNombre());
 		assertTrue(carta2.getNombre() == nueCart2.getNombre());
 	}
+	
+	@Test
+	public void empezarPartidaDeRonTest() throws Exception{
+		ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
+		ArrayList<Jugador> jugadoresTest;
+		
+		Jugador jugador1 = new Jugador();
+		Jugador jugador2 = new Jugador();
+		Jugador jugador3 = new Jugador();
+		
+		jugador1.setNombre("Julio");
+		jugador2.setNombre("Pedro");
+		jugador3.setNombre("Juan");
+		
+		listaJugadores.addAll(Arrays.asList(jugador1,jugador2,jugador3));
+		jugadoresTest = mesa.empezarPartidaDeRon(listaJugadores);
+		int tamMano = jugadoresTest.get(2).getMano().size();
+		assertEquals(7,tamMano);
+	}
 }

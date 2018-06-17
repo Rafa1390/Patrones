@@ -29,4 +29,8 @@ public class Repartidor {
 		contaCartas--;
 		return carta;
 	}
+	
+	public ArrayList<Carta> obtenerDeck() throws Exception{
+		return randomNaipe;
+	}
 }
